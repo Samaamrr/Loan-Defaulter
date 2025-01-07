@@ -1,82 +1,44 @@
-# Loan-Defaulter
-Bank loan defaulter 
-
-# EDA in a Real Business Scenario: Risk Analytics in Banking and Financial Services
+# Credit Default Prediction
 
 ## Overview
+This project aims to analyze and predict the likelihood of credit defaults based on customer data. The dataset includes information related to loans, customer demographics, employment, and other attributes.
 
-This project focuses on applying Exploratory Data Analysis (EDA) techniques to a real-world business scenario, specifically in the banking and financial services domain. The case study aims to provide an understanding of how data can be leveraged to minimize risks, especially related to lending to customers. By performing EDA and other data preprocessing techniques, the goal is to uncover insights that can help improve decision-making processes in financial institutions, particularly in identifying and mitigating the risk of default.
+## Features
+- **Application Data**: Contains data on loan applications such as the loan amount, income, gender, family status, etc.
+- **Previous Application Data**: Historical loan data detailing previous loans, purposes, application statuses, etc.
+- **Target Variable**: Indicates whether a customer defaulted (1) or not (0) on the loan.
 
-### Key Dataset Details:
-- **Target Variable**: 
-  - `0`: Non-Defaulter
-  - `1`: Defaulter
-- **Objective**: Predict whether a customer will default or not on a loan based on various features.
+## Steps in the Project
 
-## Steps Involved:
+### 1. Data Import and Basic Exploration
+- Libraries such as `pandas`, `numpy`, `matplotlib`, and `seaborn` are used for data manipulation and visualization.
+- Data is loaded from `application_data.csv` and `previous_application.csv`.
 
-### 1. **Data Import and Basic Exploration**
-   - Load the dataset into the environment.
-   - Perform an initial exploration to understand the structure, types of data, and summary statistics.
-   - Visualize key aspects of the data for further insights.
+### 2. Data Cleaning and Preprocessing
+- Handle missing data by imputing or removing missing values.
+- Process categorical variables and encode them appropriately.
+- Remove or modify outliers to ensure data quality.
+- Feature engineering to create new relevant features.
 
-### 2. **Feature Selection**
-   - Identify and select the most relevant features that contribute to predicting the target variable.
-   - Eliminate irrelevant or redundant features to improve model performance and reduce complexity.
+### 3. Data Analysis and Visualization
+- Exploratory data analysis (EDA) is conducted to understand distributions, correlations, and trends.
+- Visualizations like histograms, boxplots, and correlation matrices are used to gain insights from the data.
 
-### 3. **Feature Engineering**
-   - Transform existing features into new ones that can better capture patterns in the data.
-   - Create new features based on domain knowledge, such as customer age categories, income brackets, etc.
+### 4. Feature Selection
+- Unnecessary or redundant features are removed.
+- Features are selected based on correlation with the target variable and predictive power.
 
-### 4. **Missing Value Imputation**
-   - Address any missing or incomplete data by employing suitable imputation techniques.
-   - Replace missing values using methods like mean, median, or more advanced approaches like KNN imputation.
 
-### 5. **Value Modification**
-   - Normalize or scale numerical values to bring all features to a comparable range.
-   - Modify or encode categorical variables to make them suitable for analysis.
+## Recommendations
+- Target customers with lower incomes, homeowners, married individuals, and those with higher education levels.
+- Avoid offering loans to customers in high-risk occupations or organizations.
+- Prioritize applications that have a history of approved loans with fewer cancellations or refusals.
 
-### 6. **Outlier Detection and Treatment**
-   - Identify outliers that may significantly distort analysis.
-   - Use techniques like Z-score or IQR-based methods to detect and treat outliers.
+## Dependencies
+- pandas
+- numpy
+- matplotlib
+- seaborn
 
-### 7. **Binning**
-   - Group continuous features into discrete categories or bins (e.g., low, medium, high income).
-   - This helps in simplifying the data and enhancing model interpretability.
-
-### 8. **Data Analysis**
-   - Perform thorough statistical analysis and visualizations to understand relationships between features.
-   - Examine correlations between features and the target variable, and assess feature importance.
-
-### 9. **Explore Previous Dataset**
-   - If applicable, analyze an older version or a related dataset to see any patterns or insights that can be applied to the current case study.
-
-### 10. **Merge App and Previous Dataset**
-   - Integrate relevant data from multiple sources to form a comprehensive dataset for analysis.
-   - Clean and harmonize the combined data for further analysis.
-
-## Conclusion / Insights:
-By the end of this project, we aim to:
-- Understand the key factors influencing loan defaults.
-- Discover actionable insights to reduce financial risk when lending to customers.
-- Lay the foundation for building predictive models for loan default risk in the banking and financial sectors.
-
-## Project Structure:
-- `data/`: Contains all input datasets.
-- `notebooks/`: Jupyter notebooks for EDA and data preprocessing.
-- `scripts/`: Python scripts used for data manipulation, feature engineering, etc.
-- `output/`: Folder for visualizations, analysis results, and other output files.
-
-## Dependencies:
-This project uses the following Python libraries:
-- `pandas`: Data manipulation and analysis.
-- `numpy`: Numerical computing.
-- `matplotlib`, `seaborn`: Data visualization.
-- `scikit-learn`: Machine learning and data preprocessing.
-- `statsmodels`: Statistical analysis.
-
-## Dataset:
-- This project has 3 files :
-- application.csv
-- previous_application.csv
-- columns_description.csv
+## License
+This project is licensed under the MIT License - see the LICENSE file for details.
